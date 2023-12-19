@@ -17,8 +17,7 @@ function createDreamTeam(members) {
   let name = "";
   if ((members === null)|| Array.isArray(members)===false) return false;
   for (let i = 0; i<members.length; i++)
-  if (typeof members[i] === 'string') name += (members[i].trimStart())[0];
-  
+  if (typeof members[i] === 'string') name += (members[i].trimStart())[0];  
   
   if (name === "") return false;
   else return name.toUpperCase().split('').sort().join('');
