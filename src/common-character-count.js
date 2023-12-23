@@ -15,9 +15,14 @@ function getCommonCharacterCount(s1, s2) {
   let count = 0;    
   if (s1 === "" || s2 === "") return count;
     for (let i = 0; i < s1.length; i++) {
-      if (s2.includes(s1[i])) {
-        count++;
-        s2 = s2.substring(0, s2.indexOf[s1[i]]) + s2.substring(s1.indexOf[s2[i]] + 1, s1.length - 1);
+      let k = 0;
+      for (k=0; k<s2.length; k++)
+      if (s1[i] === s2[k]) break;
+      console.log(s2);
+      if (k!==s2.length) {
+      count++;
+        s2 = s2.substring(0, k) + s2.substring(k+1, s2.length);
+        console.log(s2);
       }
     } 
   return count;
